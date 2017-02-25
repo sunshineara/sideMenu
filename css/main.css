@@ -20,7 +20,7 @@ html, body {
     top: 25px;
     left: 25px;
     padding: 10px;
-    background: #696f96;
+    background: #686f96;
     cursor: pointer;
     box-sizing: border-box;
 }
@@ -45,7 +45,7 @@ html, body {
 .side_menu .info {
     height: 250px;
     position: relative;
-    background: #6b6f96 url("http://www.herop.me/images/pattern.png");
+    background: #686f96 url("http://www.herop.me/images/pattern.png");
     padding-top: 30px;
     box-sizing: border-box;
 }
@@ -76,7 +76,7 @@ html, body {
     display: none;
 }
 .side_menu .main_menu > li > ul > li {
-    background: #6b6f96;
+    background: #686f96;
 }
 .side_menu .main_menu li a {
     display: block;
@@ -89,6 +89,9 @@ html, body {
     background: #363a4d;
 }
 .side_menu .main_menu li a.arrow {
+    background: url("http://www.herop.me/images/arrow.png") no-repeat 96% center;
+}
+.side_menu .main_menu li a.arrow:hover {
     background: #363a4d url("http://www.herop.me/images/arrow.png") no-repeat 96% center;
 }
 .side_menu .sub_menu li a {

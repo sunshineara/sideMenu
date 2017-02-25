@@ -1,0 +1,130 @@
+@color-main1: #4b506b;
+@color-main2: lighten(@color-main1, 13%);
+@color-hover: darken(@color-main1, 10%);
+@color-white: #fff;
+
+.show { display: block; }
+.hide { display: none; }
+
+.boxSize(@w, @h) {
+  width: unit(@w, px);
+  height: unit(@h, px);
+}
+
+html, body {
+  background: @color-main1;
+}
+
+.side_shadow {
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  .hide;
+}
+.side_menu_btn {
+  .boxSize(40, 37);
+  position: fixed;
+  top: 25px;
+  left: 25px;
+  padding: 10px;
+  background: @color-main2;
+  cursor: pointer;
+  box-sizing: border-box;
+
+  span {
+    display: block;
+    .boxSize(20, 2);
+    background: white;
+    margin-bottom: 5px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.side_menu {
+  @width: 500px;
+  width: @width;
+  height: 100%;
+  background: @color-main1;
+  position: fixed;
+  top: 0;
+  left: -@width;
+
+  .info {
+    height: 250px;
+    position: relative;
+    background: @color-main2 url("http://www.herop.me/images/pattern.png");
+    padding-top: 30px;
+    box-sizing: border-box;
+
+    figure {
+
+      img {
+        .boxSize(150, 150);
+        margin: 0 auto;
+        display: block;
+        border-radius: 50%;
+      }
+
+      figcaption {
+        margin-top: 10px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 20px;
+        color: @color-white;
+      }
+    }
+
+    .close_btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      cursor: pointer;
+    }
+  }
+
+  .main_menu {
+
+    > li {
+      background: @color-main1;
+
+      > a {
+        display: block;
+        padding: 20px 50px;
+        color: @color-white;
+        transition: all 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          background: @color-hover;
+        }
+
+        &.arrow {
+          background: url("http://www.herop.me/images/arrow.png") no-repeat 96% center;
+
+          &:hover {
+            background: @color-hover url("http://www.herop.me/images/arrow.png") no-repeat 96% center;
+          }
+        }
+      }
+
+      .sub_menu {
+        .hide;
+
+        li {
+          background: @color-main2;
+
+          a {
+            padding: 16px 70px;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
